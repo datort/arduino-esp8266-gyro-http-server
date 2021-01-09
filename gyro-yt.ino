@@ -13,6 +13,7 @@ ESP8266WebServer server(80);
 void handleJson();
 void handleNotFound();
 
+const int dataPin = A0;
 
 void setup() {
   Serial.begin(115200);
@@ -53,11 +54,13 @@ void loop() {
 }
 
 void handleJson() {
+  int yAxis = analogRead(dataPin);
   StaticJsonDocument<200> doc;
-  doc["reading"] = "123";
+  doc["y"] = yAxis;
 
   String out;
   serializeJson(doc, out);
+  server.sendHeader("Access-Control-Allow-Origin", "*");
   server.send(200, "application/json", out);
 }
 

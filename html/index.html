@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  </head>
+  <body>
+
+    <div id="indicator"></div>
+
+    <div id="error"></div>
+
+    <div class="reading">
+      <span class="label">Y-Axis:</span>
+      <span id="y-axis">--</span>
+    </div>
+
+    <div class="settings-map">
+      OK @ <span id="ok-value">not set</span> <span class="seperator"> // </span> Bad @ <span id="bad-value">not set</span>
+    </div>
+
+    <div class="button-bar">
+      <button onclick="javascript:monitor.setOk()">Set OK value</button>
+      <button onclick="javascript:monitor.setBad()">Set Bad value</button>
+    </div>
+
+    <script src="./app.js"></script>
+
+    <script>
+      var monitor = new Monitoring('192.168.178.48');
+      monitor.start();
+    </script>
+  </body>
+</html>
