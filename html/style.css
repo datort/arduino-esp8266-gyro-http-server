@@ -1,6 +1,7 @@
 body {
   background: #212121;
-  font-family: Montserrat-Bold;
+  font-family: Montserrat;
+  font-weight: 700;
   color: #fff;
   text-align: center;
   padding-top: 10%;
@@ -18,7 +19,8 @@ body {
 }
 
 #error {
-  font-family: Montserrat-Black;
+  font-family: Montserrat;
+  font-weight: 900;
   font-size: 36px;
   color: #B11212;
   text-align: center;
@@ -28,7 +30,8 @@ body {
 }
 
 .reading {
-  font-family: Montserrat-ExtraBold;
+  font-family: Montserrat;
+  font-weight: 800;
   font-size: 48px;
   color: #FFFFFF;
   text-align: center;
@@ -42,7 +45,6 @@ body {
 }
 
 .settings-map {
-  font-family: Montserrat-Bold;
   font-size: 21px;
   color: #B7B7B7;
   text-align: center;
@@ -70,7 +72,6 @@ button {
   background: #414141;
   border: 1px solid #979797;
   border-radius: 8px;
-  font-family: Montserrat-Bold;
   font-size: 14px;
   color: #D5D5D5;
   text-align: center;
