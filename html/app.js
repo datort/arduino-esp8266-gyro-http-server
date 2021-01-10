@@ -1,19 +1,13 @@
 const UPDATE_INTERVAL = 1000;
 
 class Monitoring {
-  ip = null;
-  ok = {
-    y: null
-  }
-  bad = {
-    y: null
-  }
-  reading = {
-    y: null
-  }
+  host = null;
+  ok = { y: null }
+  bad = { y: null }
+  reading = { y: null }
 
-  constructor(ip) {
-    this.ip = ip;
+  constructor(host) {
+    this.host = host;
   }
 
   start = () => {
@@ -21,7 +15,7 @@ class Monitoring {
   }
 
   runLoop = () => {
-    fetch(`http://${this.ip}`)
+    fetch(`http://${this.host}`)
       .then(response => response.json())
       .then(data => {
         this.updateReadings(data);
@@ -48,7 +42,6 @@ class Monitoring {
   }
 
   setError = (error) => {
-    console.log(error);
     document.getElementById('error').textContent = error;
   }
 
